@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port Folio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://fontawesome.com/" crossorigin="anonymous"></script><!--icon--> 
+
+
+    <style type="text/css">
+    	*{
+    margin: 0 5px;
+    padding: 0;
+    font-family: 'Poppins' , sans-serif;
+    box-sizing: border-box;
+}
+/*scroll nav bar*/
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: #000214 ;
+    color: #fff;
+}
+
+/*home*/
+.logo{
+    width: 140px;
+    margin: 10px 20px;
+}
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(logo.jpg);
+    padding: 0 10px;
+    background-size: cover;
+    background-position: center;
+}
+header
+
+.container{
+    padding: 10px 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #f6f4f3;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+    transition: 0.5s
+
+}
+.header-text{
+    margin-top: 10%;
+    padding: 0px 100px;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+    
+}
+.header-text h1 span{
+    color: #282bc5;
+}
+
+/*about*/
+#about{
+    padding: 80px 0;
+    margin-top: 30px;
+    color: #ababab;
+    
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    width: 80%;
+    border-radius: 35px;
+}
+
+.about-col-2{
+    flex-basis: 62%;
+}
+
+.subtitle{
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+}
+
+.tab-title{
+    display: flex;
+    margin: 20px 0 40px;
+
+}
+
+.tab-links{
+    margin-right: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #340cb9;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+    width: 100%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span{
+    color: #5147be;
+    font-size: 20px;
+}
+
+.tab-contents{
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display: block;
+}
+
+/*services*/
+
+#sevices{
+    padding: 30px 0;
+    margin-top: 20px;
+}
+
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, tranform 0.5s;
+}
+
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.services-list div p{
+    color: #fff;
+
+}
+.services-list div h2{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.services-list div a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.services-list div:hover{
+    background: #08129c;
+    transform: translateY(-10px);
+}
+/*portfolio*/
+#portfolio{
+    padding: 50px 0;
+}
+
+.work-list{
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), #08129c);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color: #08129c;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.work:hover img{
+    transform: scale(1);
+
+}
+.work:hover .layer{
+    height: 100%;
+}
+
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #08129c;
+    padding: 14px 50px;
+    border-radius: 6px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.5s;
+}
+
+.btn:hover{
+    background: #08129c;
+}
+
+/*contact*/
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+
+.contact-left p{
+    margin-top: 30px;
+}
+
+.contact-right form{
+    width: 100%;
+}
+
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form button{
+    font-size: 18px;
+    margin-top: 20px;
+    color: #fff;
+    background: #08129c;
+    padding: 14px 60px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+/*css for small screen*/
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url();
+    }
+}
+    </style>
+</head>
+<body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="images/logo.iq.jpeg" class="logo">
+                    <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Service</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-text">
+                    <h1>Hi I'm<span> Iqmal Syakimi</span> <br>Website Designer</h1>
+                </div>
+            </div>
+        </div>
+        
+        <!------------------About--------------------------->   
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images/Muka.jpg">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="subtitle">About Me</h1>
+                        <p>My full name is Muhammad Iqmal Syakimi bin Ibrahim, currently study Science Computer at UiTM Tapah, Perak.
+                           I really like web design.
+                           <br>
+                           <br>
+                           <br>
+                           Here's everything about me:
+                        </p>
+                            <div class="tab-title">
+                                <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                                <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                                <p class="tab-links" onclick="opentab('Education')">Education</p>
+                            </div>
+                            <div class="tab-contents active-tab" id="Skills">
+                                <ul>
+                                    <li><span>UI/UX</span><br>Desinging Web/App interfaces</li>
+                                    <li><span>Web Development</span><br>Web app development</li>
+                                    <li><span>App Development</span><br>Building Androind/iOS apps</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="Experience">
+                                <ul>
+                                    <li><span>2024 - 4rd Semester(Current)</span><br>Studying html, css, js, php for website develop <br> and Android Studio, Kodular, Mix for app develop</li>
+                                    <li><span>2024 - 3rd Semester</span><br>Learn vb.net and java </li>
+                                    <li><span>2023 - 1st and 2nd Semester</span><br>Learn C++ and java (intoduction in coding)</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="Education">
+                                <ul>
+                                    <li><span>2022 - 2024(Current)</span><br>Diploma in Computer Science at UiTM Tapah</li>
+                                    <li><span>2017 - 2021</span><br>SMK Pulau Indah</li>
+                                </ul>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+       <!------------------services--------------------------->   
+       <div id="services">
+        <div class="container">
+            <h1 class="subtitle"> My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fas fa-code"></i><!--icon-->   
+                    <h2>Web Design</h2>
+                    <p>This portfolio is my first web design, nothing much going on here yet I'm doing it while watching toturial how to make it but I'll be learning much more next time about web design.</p>
+                        <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fas fa-crop-alt"></i><!--icon--> 
+                    <h2>UI/UX Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Ullam veritatis necessitatibus consectetur dolorem reiciendis, 
+                        consequuntur, laudantium autem ipsa aspernatur corporis deserunt eligendi, 
+                        vel inventore. Dignissimos eius omnis nemo temporibus suscipit.</p>
+                        <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fas fa-app-store"></i><!--icon--> 
+                    <h2>App Design</h2>
+                    <p>I'm still learning how to use android studio for self application so theres nothing here also.</p>
+                        <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+       </div>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <!------------------portfolio--------------------------->
+       <div id="portfolio">
+        <div class="container">
+            <h1 class="subtitle">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work.jpg" >
+                    <div class="layer">
+                        <h3>Web Design</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Repellat adipisci exercitationem asperiores quos voluptatem a 
+                            distinctio voluptatibus ad? Quia, necessitatibus. 
+                            Quidem dolorum sapiente, magnam mollitia debitis velit 
+                            consequuntur quam dolore.</p>
+                            <a href="#">Image</a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work2.jpg" >
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Repellat adipisci exercitationem asperiores quos voluptatem a 
+                            distinctio voluptatibus ad? Quia, necessitatibus. 
+                            Quidem dolorum sapiente, magnam mollitia debitis velit 
+                            consequuntur quam dolore.</p>
+                            <a href="#">Image</a>
+                        </div>
+                </div>
+                <div class="work">
+                    <img src="images/work3.jpg" >
+                    <div class="layer">
+                        <h3>Android App</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Repellat adipisci exercitationem asperiores quos voluptatem a 
+                            distinctio voluptatibus ad? Quia, necessitatibus. 
+                            Quidem dolorum sapiente, magnam mollitia debitis velit 
+                            consequuntur quam dolore.</p>
+                            <a href="#">Image</a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+       </div> 
+    </div> 
+
+    <!--contact-->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="subtitle">Contact Me</h1>
+                    <p>Email: iqmalsyakimi.ibrahim@gmail.com</p>
+                    <p>No.Tel: 013-8225180</p>
+                    <div class="social-icon">
+                        <a href=""><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form >
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <p>* it should be sending this message to google sheet but I didn't have one, so it doesn't send the message to any platform,</p>
+                        <p>  but feel free to email me !!</p>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright Iqmal.</p>
+        </div>
+    </div>
+
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link")
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab")
+                }
+                event.currentTarget.classList.add("active-link")
+                document.getElementById(tabname).classList.add("active-tab")
+            }
+        </script>
+    
+</body>
+</html>
